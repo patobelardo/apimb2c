@@ -29,7 +29,6 @@ Created and application at one instance of Ping for Enterprise.
 This is an OIDC Application with the following parameters:
 
 |![](img/ping1.png)
-|-
 
 |![](img/ping2.png)|
 |-
