@@ -7,9 +7,9 @@ This Proof of Concept includes:
 - Use bearer token for validation at the API
 - Integration on Dev Portal to use the token automatically
 
-# Contents
+# Steps Overview
 - [API Management (APIM) B2C Integration PoC](#api-management-apim-b2c-integration-poc)
-- [Contents](#contents)
+- [Steps Overview](#steps-overview)
   - [3rd Party Identity (Ping Identity)](#3rd-party-identity-ping-identity)
   - [Add identity to B2C tenant](#add-identity-to-b2c-tenant)
   - [B2C User flow](#b2c-user-flow)
