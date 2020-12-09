@@ -1,7 +1,3 @@
-img[src~="bordered"] {
-  border: 1px solid black
-}
-
 # API Management (APIM) B2C Integration PoC
 This document will describe steps to reproduce a PoC who integrates APIM with Azure B2C using an external IdP (Ping in this case). 
 This Proof of Concept includes:
@@ -32,7 +28,8 @@ This Proof of Concept includes:
 Created and application at one instance of Ping for Enterprise.
 This is an OIDC Application with the following parameters:
 
-![](img/ping1.png#bordered)
+|![](img/ping1.png)
+|-
 
 |![](img/ping2.png)|
 |-
