@@ -32,9 +32,10 @@ This Proof of Concept includes:
 Created and application at one instance of Ping for Enterprise.
 This is an OIDC Application with the following parameters:
 
-![](img/ping1.png# bordered)
+![](img/ping1.png#bordered)
 
-![](img/ping2.png# bordered)
+|![](img/ping2.png)|
+|-
 
 > We should capture the App Id and well-known openid endpoint for future configurations
 
