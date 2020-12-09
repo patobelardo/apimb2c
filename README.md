@@ -29,6 +29,7 @@ Created and application at one instance of Ping for Enterprise.
 This is an OIDC Application with the following parameters:
 
 |![](img/ping1.png)
+|-
 
 |![](img/ping2.png)|
 |-
@@ -40,7 +41,8 @@ This is an OIDC Application with the following parameters:
 
 We incorporate Ping as a new identity provider with the following settings
 
-![](img/b2c.png)
+|![](img/b2c.png)
+|-
 
 > For this PoC we defined mappings with sub, but it will depend on the claims you are receiving from the IdP
 
@@ -48,11 +50,13 @@ We incorporate Ping as a new identity provider with the following settings
 
 We need to create a user flow. In this case we created a flow from a SignIn_SignUp template, with the following specifications:
 
-![](img/b2c1.png)
+|![](img/b2c1.png)
+|-
 
 We need to make sure User's Object ID is included:
 
-![](img/b2c2.png)
+|![](img/b2c2.png)
+|-
 
 ## B2C Applications
 
@@ -61,36 +65,45 @@ For this integration, we need to create 2 applications on B2C. In this case:
 - **ClientAPP**: Represents an external application which consume APIs
 
 ### APIM Dev Portal v2
-![](img/AppA1.png)
+|![](img/AppA1.png)
+|-
 
-![](img/AppA2.png)
+|![](img/AppA2.png)
+|-
 
 We need to create a secret:
 
-![](img/AppA3.png)
+|![](img/AppA3.png)
+|-
 
 >Redirect URIs will be changed later
 
 ### ClientApp
-![](img/AppB1.png)
+|![](img/AppB1.png)
+|-
 
-![](img/AppB2.png)
+|![](img/AppB2.png)
+|-
 
 We should create an URI for this app (used on following steps):
 
-![](img/AppB3.png)
+|![](img/AppB3.png)
+|-
 
 We create a user_impersonation scope:
 
-![](img/AppB4.png)
+|![](img/AppB4.png)
+|-
 
 ### Permissions to clientApp
 
 Now we are adding *ClientApp* permissions to *APIM Dev Portal *app
 
-![](img/AppC1.png)
+|![](img/AppC1.png)
+|-
 
-![](img/AppC2.png)
+|![](img/AppC2.png)
+|-
 
 >Admin consent can be required
 
@@ -99,31 +112,38 @@ Now we are adding *ClientApp* permissions to *APIM Dev Portal *app
 
 After the creation of the applications, we should be able to test the user flow:
 
-![](img/UserFlow.png)
+|![](img/UserFlow.png)
+|-
 
 3rd Party logging page:
 
-![](img/UserFlow1.png)
+|![](img/UserFlow1.png)
+|-
 
 After logging in, we should be able to see the resultant token
 
-![](img/UserFlow2.png)
+|![](img/UserFlow2.png)
+|-
 
 You must keep these values for the following steps
 
 well-known URL:
 
-![](img/UserFlow3.png)
+|![](img/UserFlow3.png)
+|-
 
 Once you click in that URL, collect **issuer** value
 
-![](img/UserFlow4.png)
+|![](img/UserFlow4.png)
+|-
 
 ## APIM - Developer Identities
 
 Now we will configure identities, to accept developers using their 3rd party credentials (through B2C):
 
-![](img/apim1.png)
+|![](img/apim1.png)
+|-
+
 Notes:
 - Client ID and Secret: Corresponds to *APIM Dev Portal v2*
 - Signin and Authority: use your own B2C name
@@ -133,7 +153,8 @@ At this point, you should be able to log in to the dev portal with your external
 
 ## APIM APIs - Validate Token
 
-![](img/apim2.png)
+|![](img/apim2.png)
+|-
 
 ````xml
 <policies>
@@ -177,13 +198,16 @@ At this point, you should be able to log in to the dev portal with your external
 
 Now we are enabling the **try out** option from dev portal, to use an OAuth token (Bearer)
 
-![](img/apim3.png)
+|![](img/apim3.png)
+|-
 
-![](img/apim4.png)
+|![](img/apim4.png)
+|-
 
 After that, we assign OAuth config we created to the APIs we want:
 
-![](img/apim5.png)
+|![](img/apim5.png)
+|-
 
 ## Results
 
@@ -193,11 +217,15 @@ After all this configuration changes, now we should be able to:
 - Inject bearer token from the dev portal for testing purposes
 
 Example - Without token:
-![](img/test1.png)
+|![](img/test1.png)
+|-
 
-![](img/test2.png)
+|![](img/test2.png)
+|-
 
 With token (authorization header automatically injected):
-![](img/test3.png)
+|![](img/test3.png)
+|-
 
-![](img/test4.png)
+|![](img/test4.png)
+|-
