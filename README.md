@@ -7,6 +7,22 @@ This Proof of Concept includes:
 - Use bearer token for validation at the API
 - Integration on Dev Portal to use the token automatically
 
+# Contents
+- [API Management (APIM) B2C Integration PoC](#api-management-apim-b2c-integration-poc)
+- [Contents](#contents)
+  - [3rd Party Identity (Ping Identity)](#3rd-party-identity-ping-identity)
+  - [Add identity to B2C tenant](#add-identity-to-b2c-tenant)
+  - [B2C User flow](#b2c-user-flow)
+  - [B2C Applications](#b2c-applications)
+    - [APIM Dev Portal v2](#apim-dev-portal-v2)
+    - [ClientApp](#clientapp)
+    - [Permissions to clientApp](#permissions-to-clientapp)
+    - [Validation](#validation)
+  - [APIM - Developer Identities](#apim---developer-identities)
+  - [APIM APIs - Validate Token](#apim-apis---validate-token)
+  - [APIM - OAuth Integration](#apim---oauth-integration)
+  - [Results](#results)
+
 ## 3rd Party Identity (Ping Identity)
 
 Created and application at one instance of Ping for Enterprise.
@@ -43,25 +59,25 @@ For this integration, we need to create 2 applications on B2C. In this case:
 
 ### APIM Dev Portal v2
 ![](img/AppA1.png)
-=
+
 ![](img/AppA2.png)
-=
+
 ![](img/AppA3.png)
 
 >Redirect URIs will be changed later
 
 ### ClientApp
 ![](img/AppB1.png)
-=
+
 ![](img/AppB2.png)
-=
+
 ![](img/AppB3.png)
-=
+
 ![](img/AppB4.png)
 
 ### Permissions to clientApp
 ![](img/AppC1.png)
-=
+
 ![](img/AppC2.png)
 
 >Admin consent can be required
@@ -70,15 +86,20 @@ For this integration, we need to create 2 applications on B2C. In this case:
 ### Validation
 
 After the creation of the applications, we should be able to test the user flow:
+
 ![](img/UserFlow.png)
-=
+
 ![](img/UserFlow1.png)
 After logging in, we should be able to see the JWT
+
 ![](img/UserFlow2.png)
 
 You must keep these values for the following steps
+
 ![](img/UserFlow3.png)
+
 Once you click in that URL, collect **issuer** value
+
 ![](img/UserFlow4.png)
 
 ## APIM - Developer Identities
@@ -136,9 +157,9 @@ At this point, you should be able to log in to the dev portal with your external
 ## APIM - OAuth Integration
 
 ![](img/apim3.png)
-=
+
 ![](img/apim4.png)
-=
+
 ![](img/apim5.png)
 
 ## Results
@@ -150,10 +171,10 @@ After all this configuration changes, now we should be able to:
 
 Example - Without token:
 ![](img/test1.png)
-=
+
 ![](img/test2.png)
 
 With token (authorization header automatically injected):
 ![](img/test3.png)
-=
+
 ![](img/test4.png)
