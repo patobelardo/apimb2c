@@ -49,6 +49,8 @@ We need to create a user flow. In this case we created a flow from a SignIn_Sign
 
 ![](img/b2c1.png)
 
+We need to make sure User's Object ID is included:
+
 ![](img/b2c2.png)
 
 ## B2C Applications
@@ -62,6 +64,8 @@ For this integration, we need to create 2 applications on B2C. In this case:
 
 ![](img/AppA2.png)
 
+We need to create a secret:
+
 ![](img/AppA3.png)
 
 >Redirect URIs will be changed later
@@ -71,11 +75,18 @@ For this integration, we need to create 2 applications on B2C. In this case:
 
 ![](img/AppB2.png)
 
+We should create an URI for this app (used on following steps):
+
 ![](img/AppB3.png)
+
+We create a user_impersonation scope:
 
 ![](img/AppB4.png)
 
 ### Permissions to clientApp
+
+Now we are adding *ClientApp* permissions to *APIM Dev Portal *app
+
 ![](img/AppC1.png)
 
 ![](img/AppC2.png)
@@ -89,12 +100,17 @@ After the creation of the applications, we should be able to test the user flow:
 
 ![](img/UserFlow.png)
 
+3rd Party logging page:
+
 ![](img/UserFlow1.png)
-After logging in, we should be able to see the JWT
+
+After logging in, we should be able to see the resultant token
 
 ![](img/UserFlow2.png)
 
 You must keep these values for the following steps
+
+well-known URL:
 
 ![](img/UserFlow3.png)
 
@@ -103,6 +119,8 @@ Once you click in that URL, collect **issuer** value
 ![](img/UserFlow4.png)
 
 ## APIM - Developer Identities
+
+Now we will configure identities, to accept developers using their 3rd party credentials (through B2C):
 
 ![](img/apim1.png)
 Notes:
@@ -156,9 +174,13 @@ At this point, you should be able to log in to the dev portal with your external
 
 ## APIM - OAuth Integration
 
+Now we are enabling the **try out** option from dev portal, to use an OAuth token (Bearer)
+
 ![](img/apim3.png)
 
 ![](img/apim4.png)
+
+After that, we assign OAuth config we created to the APIs we want:
 
 ![](img/apim5.png)
 
